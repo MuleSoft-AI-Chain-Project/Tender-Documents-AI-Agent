@@ -9,7 +9,7 @@ document.getElementById('sendButton').addEventListener('click', () => {
 
 function sendRequest(userInput) {
     // Replace the URL with the actual endpoint of the REST API
-    const apiUrl = 'http://localhost:8082/query';
+    const apiUrl = 'http://localhost:8081/query';
 
     fetch(apiUrl, {
         method: 'POST',
@@ -17,7 +17,7 @@ function sendRequest(userInput) {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
         },
-        body: JSON.stringify({ question: userInput }),
+        body: JSON.stringify({ query: userInput }),
     })
     .then(response => response.json())
     .then(data => {
